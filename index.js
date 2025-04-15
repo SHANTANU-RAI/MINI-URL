@@ -4,7 +4,6 @@ const express = require('express');
 const path = require('path');
 const connectDB = require('./connect');
 const MongoStore = require('connect-mongo');
-const URL = require('./models/URL');
 const {v4: uuidv4} = require('uuid');
 const cookieParser = require('cookie-parser');
 const {restrictToLoggedinUserOnly , checkAuth} = require('./middlewares/auth');
