@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contact | MINI URL</title>
+    <link rel="stylesheet" href="/styles/main.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <%- include('header') %>
+
+    <main>
+      <h1>Contact Us</h1>
+      <p>
+        We'd love to hear from you! Whether you have a question, feedback, or
+        just want to say hi — feel free to reach out.
+      </p>
+
+      <form method="POST" action="/user/contact">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea
+          name="message"
+          placeholder="Your Message"
+          rows="5"
+          required
+        ></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </main>
+
+    <footer>© 2025 MINI URL. All rights reserved.</footer>
+  </body>
+</html>

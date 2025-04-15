@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Analytics | MINI URL</title>
+    <link rel="stylesheet" href="/styles/main.css" />
+  </head>
+  <body>
+    <%- include('header') %>
+
+    <main>
+      <h1>URL Analytics</h1>
+      <% if (urls && urls.length > 0) { %>
+      <table class="responsive-table">
+        <thead>
+          <tr>
+            <th>S. No.</th>
+            <th>Short URL</th>
+            <th>Redirect URL</th>
+            <th>Clicks</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% urls.forEach((url, index) => { %>
+          <tr>
+            <td><%= index + 1 %></td>
+            <td>
+              <a href="/url/<%= url.shortId %>"><%= url.shortId %></a>
+            </td>
+            <td><%= url.redirectURL %></td>
+            <td><%= url.visitHistory.length %></td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+      <% } else { %>
+      <p>No URLs found.</p>
+      <% } %>
+    </main>
+
+    <footer>© 2025 MINI URL. All rights reserved.</footer>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home | MINI URL</title>
+    <link rel="stylesheet" href="/styles/main.css" />
+  </head>
+  <body>
+    <%- include('header') %>
+
+    <main>
+      <h1>Hey, generate a MINI URL of your loonnnggg URL 😄</h1>
+
+      <form method="POST" action="/url">
+        <input type="text" name="url" placeholder="Enter your URL..." required />
+        <button type="submit">Generate</button>
+      </form>
+
+      <% if (locals.id) { %>
+      <p>
+        <h4>Short URL:</h4>
+        <a href="/url/<%= id %>"><h3>http://localhost:3000/url/<%= id %></h3></a>
+      </p>
+      <% } %>
+    </main>
+
+    <footer>© 2025 MINI URL. All rights reserved.</footer>
+  </body>
+</html>
