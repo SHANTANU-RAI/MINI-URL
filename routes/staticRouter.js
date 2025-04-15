@@ -19,4 +19,5 @@ router.get('/signup', (req , res) => {
     res.render("auth", { formType: "signup", error: null });
 });
 
+
 module.exports = router;
