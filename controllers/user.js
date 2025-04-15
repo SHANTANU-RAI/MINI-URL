@@ -1,5 +1,5 @@
 const User = require('../models/user');
-const URL = require('../models/URL');
+const URL = require('../models/url');
 const { v4: uuidv4 } = require('uuid'); 
 const {setUser , getUser} =  require('../service/auth');
 const bcrypt = require('bcrypt');
