@@ -6,6 +6,8 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 header.header {
@@ -19,6 +21,8 @@ header.header {
   position: sticky;
   top: 0;
   z-index: 100;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .header-left {
@@ -96,11 +100,12 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   text-align: center;
   max-width: 800px;
   margin: 0 auto;
   width: 100%;
+  box-sizing: border-box;
 }
 
 main h1 {
@@ -187,6 +192,7 @@ footer {
   margin-top: 3rem;
   font-size: 0.9rem;
   width: 100%;
+  box-sizing: border-box;
 }
 
 /* ✅ TABLE WRAPPER */
@@ -295,7 +301,19 @@ table.responsive-table a:hover {
 @media screen and (max-width: 768px) {
   header.header {
     flex-wrap: wrap;
-    padding: 0.75rem 1.5rem;
+    padding: 0.75rem 1rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .header-left {
+    flex: 1;
+    min-width: auto;
+  }
+
+  .header-right {
+    flex: 1;
+    min-width: auto;
   }
 
   .nav-links {
@@ -308,6 +326,7 @@ table.responsive-table a:hover {
 
   .nav-links a {
     margin: 0.3rem 0.8rem;
+    font-size: 0.9rem;
   }
 
   main {
@@ -316,6 +335,8 @@ table.responsive-table a:hover {
 
   main h1 {
     font-size: 2rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
   }
 
   form {
@@ -335,9 +356,20 @@ table.responsive-table a:hover {
   }
   
   .table-wrapper {
-    margin: 0 -1rem;
-    width: calc(100% + 2rem);
-    border-radius: 0;
+    margin: 0;
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  /* Ensure logout button isn't too large */
+  .btn--logout {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+  
+  /* Ensure the logo is not too large */
+  .logo {
+    font-size: 1.3rem;
   }
 }
 
