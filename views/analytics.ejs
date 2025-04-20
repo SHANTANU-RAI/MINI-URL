@@ -3,6 +3,58 @@
   <head>
     <title>Analytics | MINI URL</title>
     <link rel="stylesheet" href="/styles/main.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <%- include('header') %>
+
+    <main>
+      <h1>URL Analytics</h1>
+      <% if (urls && urls.length > 0) { %>
+      <div class="table-wrapper">
+        <table class="responsive-table">
+          <thead>
+            <tr>
+              <th>S. No.</th>
+              <th>Short URL</th>
+              <th>Redirect URL</th>
+              <th>Clicks</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% urls.forEach((url, index) => { %>
+            <tr>
+              <td><%= index + 1 %></td>
+              <td>
+                <a href="/id/<%= url.shortId %>"><%= url.shortId %></a>
+              </td>
+              <td>
+                <div class="url-tooltip">
+                  <span class="truncate-url"><%= url.redirectURL %></span>
+                  <span class="tooltip-text"><%= url.redirectURL %></span>
+                </div>
+              </td>
+              <td><%= url.visitHistory.length %></td>
+            </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+      <% } else { %>
+      <p>No URLs found.</p>
+      <% } %>
+    </main>
+
+    <footer>© 2025 MINI URL. All rights reserved.</footer>
+  </body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <title>Analytics | MINI URL</title>
+    <link rel="stylesheet" href="/styles/main.css" />
   </head>
   <body>
     <%- include('header') %>
@@ -39,4 +91,4 @@
 
     <footer>© 2025 MINI URL. All rights reserved.</footer>
   </body>
-</html>
+</html> -->
